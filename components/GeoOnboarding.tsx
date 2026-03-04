@@ -641,6 +641,9 @@ export default function GeoOnboarding() {
                 color: "#f1f5f9", fontSize: 14, lineHeight: 1.7,
               }}>
                 ありがとうございます！全項目の回答が完了しました 🎉<br />
+                下のボタンから回答を送信してください。送信後、弊社担当よりご連絡いたします。<br /><br />
+                <span style={{ color: "#f59e0b", fontWeight: 700 }}>⚠ 要対応</span> の項目は弊社から個別にご連絡します。<br />
+                <span style={{ color: "#94a3b8" }}>→ 弊社確認</span> の項目は弊社側で調査します。
                 下の回答サマリーを弊社担当にそのままコピーして送っていただければOKです。<br /><br />
                 <span style={{ color: "#f59e0b", fontWeight: 700 }}>⚠ 要対応</span> の項目は弊社から個別にご連絡します。<br />
                 <span style={{ color: "#94a3b8" }}>→ 弊社確認</span> の項目は弊社側で調査します。
