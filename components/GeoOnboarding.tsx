@@ -1,7 +1,5 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
-import { useState, useEffect, useRef } from "react";
-
 // ── 質問フロー定義 ──────────────────────────────────────────────────────────
 const FLOW = [
   {
