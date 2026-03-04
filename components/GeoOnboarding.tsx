@@ -366,6 +366,13 @@ export default function GeoOnboarding() {
   }
 
   const [copied, setCopied] = useState(false);
+  const [sent, setSent] = useState(false);
+  function handleSend() {
+    fetch("https://hook.us1.make.com/cr78muabp70pghv2b9ztgmxis1qr8e1i", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(answers) })
+      .then(() => { setSent(true); })
+      .catch(() => { setSent(false); });
+  }
+
   function handleCopy() {
     fetch("https://hook.us1.make.com/cr78muabp70pghv2b9ztgmxis1qr8e1i", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(answers) });
     navigator.clipboard.writeText(buildSummaryText(answers)).then(() => {
@@ -640,6 +647,11 @@ export default function GeoOnboarding() {
               </div>
             </div>
 
+            <div style={{ paddingLeft: 42, marginBottom: 16 }}>
+              <button onClick={handleSend} style={{ width: "100%", background: sent ? "linear-gradient(135deg, #16A34A, #15803d)" : "linear-gradient(135deg, #2563EB, #0D9488)", border: "none", borderRadius: 14, padding: "14px 24px", color: "#fff", fontSize: 15, fontWeight: 700, cursor: "pointer", fontFamily: "inherit", transition: "all 0.3s" }}>
+                {sent ? "✓ 送信完了しました" : "回答を送信する →"}
+              </button>
+            </div>
             {/* サマリーカード */}
             <div style={{ paddingLeft: 42 }}>
               <div style={{
