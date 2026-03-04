@@ -735,4 +735,3 @@ export default function GeoOnboarding() {
     </div>
   );
 }
-export default GeoOnboarding;
