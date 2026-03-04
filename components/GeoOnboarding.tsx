@@ -186,16 +186,16 @@ const FLOW = [
 ];
 
 // ── ユーティリティ ─────────────────────────────────────────────────────────
-function getNext(step, answer) {
+function getNext(step: any, answer: any) {
   if (typeof step.next === "function") return step.next(answer);
   return step.next;
 }
 
-function getStep(id) {
+function getStep(id: string) {
   return FLOW.find((s) => s.id === id);
 }
 
-function categoryColor(cat) {
+function categoryColor(cat: string) {
   if (!cat) return "#1A3557";
   if (cat.includes("サイト")) return "#2563EB";
   if (cat.includes("クローラー")) return "#DC2626";
@@ -205,13 +205,13 @@ function categoryColor(cat) {
   return "#6B7280";
 }
 
-function answerLabel(key, value) {
+function answerLabel(key: string, value: any) {
   if (!value) return "—";
   if (Array.isArray(value)) return value.join("、");
   return value;
 }
 
-function needsAttention(key, value) {
+function needsAttention(key: string, value: any) {
   if (key === "cloudflare_botfight" && value === "オンになっている") return true;
   if (key === "overseas_ip" && value === "している") return true;
   if (key === "noindex" && value === "入っている") return true;
@@ -219,7 +219,7 @@ function needsAttention(key, value) {
   return false;
 }
 
-function isUnknown(value) {
+function isUnknown(value: any) {
   if (!value) return false;
   if (Array.isArray(value)) return false;
   return value.includes("わからない") || value.includes("確認できない");
