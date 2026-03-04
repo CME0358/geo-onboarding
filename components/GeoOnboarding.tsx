@@ -46,7 +46,7 @@ const FLOW = [
     question: "Cloudflare（クラウドフレア）を使っていますか？\n\nサイトを高速化・保護するサービスです。契約しているサーバーやドメイン管理画面で確認できます。",
     options: ["使っている", "使っていない", "わからない"],
     key: "cloudflare",
-    next: (ans) => ans === "使っている" ? "cloudflare_botfight" : "waf_other",
+    next: (ans: string) => ans === "使っている" ? "cloudflare_botfight" : "waf_other",
   },
   {
     id: "cloudflare_botfight",
